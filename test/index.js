@@ -1,50 +1,40 @@
-const {Sequelize, DataTypes} = require('sequelize');
+const {Sequelize, DataTypes, Model} = require('sequelize');
+
+
+
+/* 
+    模型实例
+    Model Instances
+*/
 
 
 // 连接数据库
-const sequelize = new Sequelize('system','root','p@ssw0rd',{
+const sequelize = new Sequelize('test','root','p@ssw0rd',{
     host:'localhost',
     dialect:'mysql',
-    //全局配置停止模型名称复数自动化
+    
     define:{
-        freezeTableName:true
+        freezeTableName:true,    //全局配置停止模型名称复数自动化
+        noPrimaryKay:true    // 防止Sequelize 自动将主键属性id 添加到每个模型
     }
 });
 
-//测试连接
-
-async function test(){
-    try{
-        await sequelize.authenticate();
-        console.log('Connection has been establicshed successfully');
-    } catch(err){
-        console.error('Unable to connect to the databases:',err);
-    }
-
-}
-
-test();
 
 
-const User = sequelize.define('User',{
-    firstName:{
-        type:DataTypes.STRING,
-        allowNull:false
+//创建模型
+const User = sequelize.define("user",{
+    name:DataTypes.TEXT,
+    favoriteColor:{
+        type:DataTypes.TEXT,
+        defaultValue:'green'
     },
-    lastName:{
-        type:DataTypes.STRING
-    }
-},{
-    
-})
-
-console.log(User === sequelize.models.User)
+    age:DataTypes.INTEGER,
+    cash:DataTypes.INTEGER
+});
 
 
-
-
-/*
-    关闭数据库连接
-
-*/
-// sequelize.close();
+// 同步数据
+(async () => {
+    await sequelize.sync({ force: true });
+    // 这里是代码
+  })();
