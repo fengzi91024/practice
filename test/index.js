@@ -1,8 +1,12 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
-
 /* 
     模型实例
     Model Instances
+
+    # 使用 yarn
+      yarn add sequelize
+      yarn add mysql2     # MySQL
+
 */
 
 // 连接数据库
@@ -47,13 +51,3 @@ console.log(jane.name);
 
 //创建实列   尽管模型是一个类，但是不是用new运算符创建实列，应该使用build 方法：
 
-
-(async () => {
-    // 同步数据库（等待操作完成）
-    await sequelize.sync({ force: true });
-  
-    // 创建并保存实例（等待操作完成）
-    await jane.save();
-    console.log('Jane 已保存到数据库!');
-  })();
-  
