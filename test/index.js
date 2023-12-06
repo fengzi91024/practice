@@ -42,12 +42,15 @@ const User = sequelize.define("user", {
   cash: DataTypes.INTEGER
 });
 
-const jane = User.build({ name: "Jane" });
-console.log(jane instanceof User);
-console.log(jane.name);
 
 
 
 
 //创建实列   尽管模型是一个类，但是不是用new运算符创建实列，应该使用build 方法：
+// const jane = User.build({ name: "Jane" });
+// console.log(jane instanceof User);
+// console.log(jane.name);
 
+;(async ()=>{
+  const jane = await User.create({name:"Jane"})
+})
