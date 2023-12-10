@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "",
+    "build": ""
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
