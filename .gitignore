@@ -1,3 +1,5 @@
 Server/node_modules/
 Client/node_modules/
 test/node_modules/
+Vue/入门/node_modules/
+Vue/test/node_modules/

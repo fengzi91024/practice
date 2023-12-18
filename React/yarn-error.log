@@ -1,0 +1,27 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\18058\AppData\Local\node\corepack\yarn\1.22.19\bin\yarn.js add react react-dom react-srcipts
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\vmware\bin\;D:\Python39\Scripts\;D:\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\bandizip\;D:\java\\bin;C:\Users\18058\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Xshell\;D:\FTP\;C:\Program Files\Git\cmd;D:\weixindev\微信web开发者工具\dll;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;D:\mysql-5.7.43-winx64\bin;C:\Users\18058\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\18058\AppData\Local\Programs\Python\Python312\;C:\Users\18058\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm 2019.1.1\bin;;C:\Program Files\Java\jdk-1.8\bin;D:\phpStudy\PHPTutorial\MySQL\bin;D:\qqyx\QQGameTempest\Hall.57938\;C:\Users\18058\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\18058\AppData\Local\Yarn\bin;C:\Users\18058\.dotnet\tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 104.16.24.34:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1495:16)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zhuce</title>
+    <!-- 导入jQuery包 -->
+    <script src="./tool/jquery-3.7.1.min.js"></script>
+    <style>
+      form {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        border: 1px solid black;
+      }
+      form h1 {
+        text-align: center;
+      }
+      form .input {
+        text-align: center;
+      }
+      #info{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <form>
+        <h1>Login</h1>
+        <div class="input">
+          <label for="username">用户名:</label>
+          <input type="text" id="username" placeholder="请输入你的账号" /><br />
+
+          <label for="password"> 密码:</label>
+          <input type="password" id="password" placeholder="请输入你的密码" />
+          <br />
+          <label for="">校验密码:</label>
+          <input type="password" id="re-enter" placeholder="请重新输入密码" />
+          <br />
+
+          <!-- <label for="电话">telephone:</label>
+          <input type="text" id="telephone" placeholder="请输入你要绑定的手机号"/> -->
+          <br />
+          <div>
+            <label for="">性别：</label>
+            男:
+            <input type="radio" value="男" name="gender" checked id="man"/>
+            女:
+            <input type="radio" value="女" name="gender" id="woman">
+          </div>
+          <br />
+          <button type="button" class="button" id="register">注册</button
+          ><br />
+          <div id="info"></div>
+        </div>
+      </form>
+    </div>
+    <script>
+      $("#register").on("click", () => {
+        const username = $("#username").val();
+        const password = $("#password").val();
+        const repasswd = $("#re-enter").val();
+        // const telephone =$("#telephone").val();
+        const selectedGender = $("input[name='gender']:checked").val();
+        const info = $("#info")
+        //点击注册检验密码
+        if(password !== repasswd){
+           //返回错误信息
+            info.html("密码和校验密码不同")
+        }
+        
+        $.ajax({
+          url: "http://127.0.0.1:4000/register",
+          method: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          data: JSON.stringify({ username, password,selectedGender}),
+          success: function (data) {
+            //处理返回的数据
+           
+          },
+          error: function () {
+            // 处理错误
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

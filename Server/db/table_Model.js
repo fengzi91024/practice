@@ -188,7 +188,7 @@ const User = sequelize.define('user',{
 ;(async ()=>{
     try{
         //同步数据库表结构
-        await sequelize.sync({force:true});    
+        await sequelize.sync();    
     }catch(error){
         console.error("同步数据库结构失败",error);
     }
