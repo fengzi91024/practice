@@ -64,9 +64,9 @@ app.post("/register", (req, res) => {
 
 
 
-
-
-
+app.post("/update",(req,res)=>{
+  console.log(req.body);
+})
 
 
 
