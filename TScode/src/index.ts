@@ -18,7 +18,6 @@ console.log(c as number);
 c = "jfdsa"
 
 // 类型守卫
-if(typeof c == "string"){
+if(typeof c === "string"){
     console.log(c.length);
-    
 }
