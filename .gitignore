@@ -4,5 +4,5 @@ test/node_modules/
 Vue/入门/node_modules/
 Vue/test/nav/node_modules/
 Vue/test/students/node_modules/
-.gitignore
-Java/jigsawPuzzleGame
+Java/jigsawPuzzleGame/
+React/node_modules/

@@ -1,0 +1,21 @@
+.logs-date{
+    width: 88px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.logs-date .month{
+    height: 28px;
+    line-height: 28px;
+    background-color: #d62828;
+    font-size: 20px;
+    color: white;
+}
+
+.logs-date .day{
+    background-color: #fff;
+    height: 60px;
+    line-height: 60px;
+    font-size: 50px;
+}
