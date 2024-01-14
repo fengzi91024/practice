@@ -6,8 +6,8 @@ const LogItem = (props) => {
         <div className="logs-item">
             <MyDate date={props.date}/>
             <div className="logs-item-desc">
-                <h2>学习React</h2>
-                <div className="logs-item-time">80分钟</div>
+                <h2>{props.desc}</h2>
+                <div className="logs-item-time">{props.time}分钟</div>
             </div>
         </div>
     );
