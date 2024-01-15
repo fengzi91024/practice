@@ -1,6 +1,7 @@
 import React from 'react';
 import "./MyDate.css"
 const MyDate = (props) => {
+
     //获取月份
     const month = props.date.toLocaleString('zh-Cn',{month:'long'})
     //获取日期
