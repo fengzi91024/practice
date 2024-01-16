@@ -1,0 +1,17 @@
+.words-shell{
+    padding: 6px;
+    position: absolute;
+    width: 350px;
+    height: 800px;
+    background-color: rgba(93, 164, 209, 0.8);
+    top: 50px;
+    right: 150px;
+}
+
+.words{
+    padding: 6px;
+    background-color: #fff;
+}
+
+
+
