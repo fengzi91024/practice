@@ -6,6 +6,8 @@ import Confirm from "../../UI/ConFirm/Confirm";
 
 const LogItem = (props) => {
     const [showConfirm,setShowConfirm] = useState(false)
+    console.log(showConfirm)
+
     const deleteHandler = () => {
 
         setShowConfirm(true)
@@ -18,6 +20,7 @@ const LogItem = (props) => {
     // 定义一个确定的函数
     const okHandler=()=>{
         props.onDelLog();
+        // setShowConfirm(false)
     }
 
     return (
