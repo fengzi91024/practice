@@ -93,13 +93,8 @@ const App = () => {
     }
 
     //删除日志
-    const delLogHandler = (index) => {
-        console.log(index)
-        setLogsData(prevState => {
-                const newLog = [...prevState]
-                newLog.splice(index, 1)
-                return newLog
-            }
+    const delLogHandler = (id) => {
+        setLogsData(prevState => prevState.filter(item=>item.id !== id)
         )
     }
 

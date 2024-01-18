@@ -11,6 +11,9 @@ p {
     font-weight: bold;
     font-size: 26px;
 }
+.filter-time{
+    display: flex;
+}
 
 /*修改整体滚动条的样式*/
 ::-webkit-scrollbar {
