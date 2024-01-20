@@ -1,85 +1,38 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./index.css"
 import Logs from "./components/Logs/Logs";
 import "./App.css"
 import LogsForm from "./components/LogsFrom/LogsForm";
+import axios from "axios";
 
 const App = () => {
-    const [logsData, setLogsData] = useState(
-        [
-            {
-                id: 1,
-                date: new Date(2024, 1, 15),
-                desc: '学习React',
-                time: 120
-            },
-            {
-                id: 2,
-                date: new Date(2024, 1, 16),
-                desc: '学习React',
-                time: 121
-            },
-            {
-                id: 3,
-                date: new Date(2024, 1, 17),
-                desc: '学习React',
-                time: 121
-            },
-            {
-                id: 4,
-                date: new Date(2024, 1, 17),
-                desc: '学习React',
-                time: 120
-            },
-            {
-                id: 5,
-                date: new Date(2024, 1, 18),
-                desc: '学习React',
-                time: 120
-            },
-            {
-            id: 6,
-            date: new Date(2024, 1, 19),
-            desc: '学习React',
-            time: 121
-            },
-            {
-                id: 7,
-                date: new Date(2024, 1, 20),
-                desc: '学习React',
-                time: 121
+    const [logsData, setLogsData] = useState([])
+
+    const optionClass = ["学习", "运动"]
+
+    useEffect(()=>{
+        const fetchData = async ()=>{
+            try{
+                const response = await axios.get('http://127.0.0.1:2000/list')
+                let data=JSON.parse(response.data.data)
+                for (let item of data) {
+                    item.date=new Date(item.date)
+                }
+                setLogsData(data);
+            }catch (error){
+                console.log('Error fetching data',error)
             }
+        };
+        fetchData()
+    },[]);
 
-        ]
-    )
-
-    const wordData = [
-        {
-            id: 1,
-            english: "command",
-            chinese: "命令"
-        },
-        {
-            id: 2,
-            english: "pass",
-            chinese: "通过"
-        },
-        {
-            id: 3,
-            english: "response",
-            chinese: "响应"
-        },
-        {
-            id: 4,
-            english: "send",
-            chinese: "发送"
-        },
-        {
-            id: 5,
-            english: "term",
-            chinese: "学期"
-        },
-    ]
+    // const wordData = [
+    //     {
+    //         id: 1,
+    //         english: "command",
+    //         chinese: "命令"
+    //     }
+    // ]
 
     // 接收提交的数据
     const saveLogHandler = (newLog) => {
@@ -100,8 +53,8 @@ const App = () => {
 
     return (
         <div className={'app'}>
-            <LogsForm onSave={saveLogHandler}></LogsForm>
-            <Logs logsData={logsData} onDelLog={delLogHandler}/>
+            <LogsForm onSave={saveLogHandler} optionClass={optionClass} fetchData={fetchData}></LogsForm>
+            <Logs logsData={logsData} onDelLog={delLogHandler} optionClass={optionClass}/>
         </div>
     );
 };

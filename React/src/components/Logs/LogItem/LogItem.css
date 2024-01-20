@@ -1,4 +1,5 @@
-.logs-item{
+.logs-item {
+    position: relative;
     margin: 16px;
     background-color: #fcbf49;
     display: flex;
@@ -6,22 +7,29 @@
     padding: 10px;
     font-weight: bold;
 }
-.logs-item-desc{
+
+.logs-item-desc {
     flex: auto;
     text-align: center;
 }
 
-.logs-item-desc h2{
+.logs-item-desc h2 {
     margin: 10px 0;
     font-size: 20px;
     color: #003049;
 }
 
-.logs-item-time{
+.logs-item-time {
     color: #d62828;
 }
 
-.delete{
+.logs-del {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.delete {
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -29,7 +37,8 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.delete:hover{
+
+.delete:hover {
     color: #d62828;
     transform: rotate(1turn);
 }

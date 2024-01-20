@@ -13,6 +13,10 @@ p {
 }
 .filter-time{
     display: flex;
+    justify-content: space-between;
+}
+.filter-date{
+    display: flex;
 }
 
 /*修改整体滚动条的样式*/

@@ -6,9 +6,9 @@ const LogFilter = (props) => {
 
 
     const changeHandler = e => {
-        props.onYearChange(+e.target.value);
+        props.onSelectChange(e.target.value);
     }
-    console.log(props.option)
+
     let optionList = props.option.map(item => <option>{item}</option>)
 
     return (
