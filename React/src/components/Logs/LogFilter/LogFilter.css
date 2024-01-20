@@ -1,0 +1,29 @@
+
+.filter-bar{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+#filter{
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    background-color: #fcbf49;
+}
+
+
+#filter:focus{
+    outline: none;
+}
+
+
+#filter option{
+    font-weight: bold;
+}

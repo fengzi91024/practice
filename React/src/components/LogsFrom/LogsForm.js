@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import Card from "../UI/Card/Card";
 import "./LogsForm.css"
+import axios from "axios";
 const LogsForm = (props) => {
 
     // 定义一个State 存储数据
     const [formData,setFormData] = useState({
         inputDate:"",
         inputDesc:"",
-        inputTime:""
+        inputCount:"",
+        selectType:"学习"
     })
 
     //获取日期的值
@@ -25,15 +27,22 @@ const LogsForm = (props) => {
         })
     }
     //获取时长的值
-    const timeChangeHandler = (e)=>{
+    const countChangeHandler = (e)=>{
         setFormData({
             ...formData,
-            inputTime:e.target.value
+            inputCount:e.target.value
         })
     }
 
+    // 获取分类
+    const sortChangeHandler = (e)=>{
+        setFormData({
+            ...formData,
+            selectType: e.target.value
+        })
+    }
 
-    const formSubmitHandler = (e)=>{
+    const  formSubmitHandler = async(e)=>{
         //     取消表单的默认行为
         e.preventDefault();
 
@@ -41,19 +50,28 @@ const LogsForm = (props) => {
         const newLog = {
             date:new Date(formData.inputDate),
             desc:formData.inputDesc,
-            time:+formData.inputTime
+            count:+formData.inputCount,
+            logtype:formData.selectType
         }
+        try{
+             await axios.post("http://127.0.0.1:2000/add",newLog)
 
-        props.onSave(newLog);
+        }catch (error){
+            console.log('Error',error)
+        }
 
     //     清空表单
             setFormData({
                 inputDate: "",
                 inputDesc: "",
-                inputTime: ""
+                inputCount: "",
+                selectType: "学习"
             })
 
     }
+
+    let optionList = props.optionClass.map(item => <option>{item}</option>)
+
     return (
         <Card className={'logs-form'}>
             <form onSubmit={formSubmitHandler}>
@@ -67,7 +85,14 @@ const LogsForm = (props) => {
                 </div>
                 <div className={"form-item"}>
                     <label htmlFor="time">时长</label>
-                    <input id={"time"} onChange={timeChangeHandler} value={formData.inputTime} type="number"/>
+                    <input id={"time"} onChange={countChangeHandler} value={formData.inputTime} type="number"/>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="sort">分类</label>
+                    <select id="sort" onChange={sortChangeHandler} value={formData.selectType}>
+                        {optionList}
+                    </select>
+
                 </div>
                 <div className="form-btn">
                     <button>添加</button>

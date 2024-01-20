@@ -6,3 +6,5 @@ Vue/test/nav/node_modules/
 Vue/test/students/node_modules/
 Java/jigsawPuzzleGame/
 React/node_modules/
+sequelize/node_modules
+.gitignore

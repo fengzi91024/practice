@@ -1,0 +1,41 @@
+.confirm-bar{
+    position: absolute;
+    width: 600px;
+    height: 250px;
+    background-color: #eae2b7;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.confirm-btn{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 80px 0 0 0;
+}
+
+.confirm-btn button{
+    width: 100px;
+    height: 80px;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 80px;
+    border: none;
+    background-color: #194B49;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.confirm-btn .ok:hover{
+    background-color: red;
+}
+
+.confirm-btn .cancel:hover{
+    background-color: #ffffff;
+    color: black;
+}
+
