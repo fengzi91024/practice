@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Card from "../UI/Card/Card";
 import "./LogsForm.css"
 import axios from "axios";
+import useFetchData from '../../hooks/useFetchData';
 const LogsForm = (props) => {
 
     // 定义一个State 存储数据
@@ -55,6 +56,7 @@ const LogsForm = (props) => {
         }
         try{
              await axios.post("http://127.0.0.1:2000/add",newLog)
+               
 
         }catch (error){
             console.log('Error',error)
@@ -67,10 +69,10 @@ const LogsForm = (props) => {
                 inputCount: "",
                 selectType: "学习"
             })
-
+        
     }
 
-    let optionList = props.optionClass.map(item => <option>{item}</option>)
+    let optionList = props.optionClass.map((item,index) => <option key={index}>{item}</option>)
 
     return (
         <Card className={'logs-form'}>

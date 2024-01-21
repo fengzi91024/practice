@@ -18,7 +18,8 @@ const Logs = (props) => {
 
     //过滤数据
     let filterData = props.logsData.filter(item => {
-        return item.date.getFullYear() === year && item.date.getMonth() === month || item.logtype === sort
+
+        return item.date.getFullYear() === year && item.date.getMonth() === (month-1) && item.logtype === sort
     })
 
     //创建一个修改年份的函数

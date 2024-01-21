@@ -43,7 +43,10 @@ app.post("/add", (req, res) => {
 
     addLogEntry();
 
-
+    res.send({
+        status:"200",
+        data:"添加成功"
+    })
 
 })
 
@@ -73,19 +76,6 @@ app.get("/list", (req, res) => {
     
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -9,7 +9,7 @@ const LogFilter = (props) => {
         props.onSelectChange(e.target.value);
     }
 
-    let optionList = props.option.map(item => <option>{item}</option>)
+    let optionList = props.option.map((item,index) => <option key={index}>{item}</option>)
 
     return (
         <div className={'filter-bar'}>
