@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Card from "../UI/Card/Card";
 import "./LogsForm.css"
-import useFetchData from '../../hooks/useFetchData';
+import useFetchData from "../../hooks/useFetchData";
 const LogsForm = (props) => {
-
+    const {addData}= useFetchData()
     // 定义一个State 存储数据
     const [formData,setFormData] = useState({
         inputDate:"",
@@ -54,7 +54,7 @@ const LogsForm = (props) => {
             logtype:formData.selectType
         }
 
-       
+        addData("http://127.0.0.1:2000/add",newLog)
 
     //     清空表单
             setFormData({
@@ -81,7 +81,7 @@ const LogsForm = (props) => {
                 </div>
                 <div className={"form-item"}>
                     <label htmlFor="time">时长</label>
-                    <input id={"time"} onChange={countChangeHandler} value={formData.inputTime} type="number"/>
+                    <input id={"time"} onChange={countChangeHandler} value={formData.inputCount} type="text"/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="sort">分类</label>

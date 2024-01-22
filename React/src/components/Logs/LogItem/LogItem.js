@@ -19,6 +19,7 @@ const LogItem = (props) => {
     // 定义一个确定的函数
     const okHandler=()=>{
         props.onDelLog();
+        setShowConfirm(false)
     }
 
     return (

@@ -41,7 +41,7 @@ const Logs = (props) => {
                         key={item.id}
                         logtype={item.logtype}
                         onDelLog={() => {
-                            props.onDelLog(item.id)
+                            props.onDelLog("http://127.0.0.1:2000/"+item.id)
                         }}
         />
     })
