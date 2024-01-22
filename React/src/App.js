@@ -12,13 +12,7 @@ const App = () => {
   const optionClass = ["学习", "运动"];
 
 
-  // const wordData = [
-  //     {
-  //         id: 1,
-  //         english: "command",
-  //         chinese: "命令"
-  //     }
-  // ]
+
 
   // 接收提交的数据
   const saveLogHandler = (newLog) => {

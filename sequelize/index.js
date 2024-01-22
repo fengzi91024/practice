@@ -59,12 +59,10 @@ app.get("/list", (req, res) => {
             const logs = await Log.findAll({
                 attributes:{exclude:['createdAt','updatedAt']}
             })
-            // 格式化数据
-            const formattedLogs = JSON.stringify(logs, null, 2)
-            console.log(formattedLogs);
+            
             res.json({
                 status: "200",
-                data:formattedLogs                
+                data:logs                
             })
         }
         catch (error) {

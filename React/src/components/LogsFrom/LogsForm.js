@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Card from "../UI/Card/Card";
 import "./LogsForm.css"
-import axios from "axios";
 import useFetchData from '../../hooks/useFetchData';
 const LogsForm = (props) => {
 
@@ -54,13 +53,8 @@ const LogsForm = (props) => {
             count:+formData.inputCount,
             logtype:formData.selectType
         }
-        try{
-             await axios.post("http://127.0.0.1:2000/add",newLog)
-               
 
-        }catch (error){
-            console.log('Error',error)
-        }
+       
 
     //     清空表单
             setFormData({
