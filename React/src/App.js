@@ -1,31 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./index.css";
 import Logs from "./components/Logs/Logs";
-import "./App.css";
+import classes from "./App.module.css"
 import LogsForm from "./components/LogsFrom/LogsForm";
 import useFetchData from "./hooks/useFetchData";
 
 
 const App = () => {
+    const {logsData, removeData, addData} = useFetchData("http://127.0.0.1:2000/list")
 
-  const {logsData,delData,fetchData,setLogsData,} = useFetchData()
-  const optionClass = ["学习", "运动"];
-  useEffect(()=> {
-    fetchData("http://127.0.0.1:2000/list");
-  },[])
-
-
-
-  return (
-    <div className={"app"}>
-      <LogsForm  optionClass={optionClass}></LogsForm>
-      <Logs
-        logsData={logsData}
-        onDelLog={delData}
-        optionClass={optionClass}
-      />
-    </div>
-  );
+    const optionClass = ["学习", "运动","阅读"];
+    console.log(logsData)
+    return (
+        <div className={classes.app}>
+            <LogsForm optionClass={optionClass} onAdd={addData}></LogsForm>
+            <Logs optionClass={optionClass} removeData={removeData} logsData={logsData}/>
+        </div>
+    );
 };
 
 

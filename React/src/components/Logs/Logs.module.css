@@ -6,16 +6,16 @@
     height: 800px;
     overflow: auto;
 }
-p {
+p{
     text-align: center;
     font-weight: bold;
     font-size: 26px;
 }
-.filter-time{
+.filterTime{
     display: flex;
     justify-content: space-between;
 }
-.filter-date{
+.filterDate{
     display: flex;
 }
 

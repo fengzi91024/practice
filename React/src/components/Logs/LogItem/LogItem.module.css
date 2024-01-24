@@ -1,4 +1,4 @@
-.logs-item {
+.logsItem {
     position: relative;
     margin: 16px;
     background-color: #fcbf49;
@@ -8,22 +8,26 @@
     font-weight: bold;
 }
 
-.logs-item-desc {
+.logsItemDesc {
     flex: auto;
     text-align: center;
 }
 
-.logs-item-desc h2 {
+.logsItemDesc h2 {
     margin: 10px 0;
     font-size: 20px;
     color: #003049;
 }
 
-.logs-item-time {
+.logsItemTime {
     color: #d62828;
 }
 
-.logs-del {
+.logsSort{
+
+}
+
+.logsDel {
     position: absolute;
     top: 0;
     right: 0;
@@ -42,3 +46,4 @@
     color: #d62828;
     transform: rotate(1turn);
 }
+

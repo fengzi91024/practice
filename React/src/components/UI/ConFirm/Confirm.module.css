@@ -1,7 +1,8 @@
-.confirm-bar{
+.confirmBar{
     position: absolute;
     width: 600px;
     height: 250px;
+    padding-top: 20px;
     background-color: #eae2b7;
     top: 0;
     right: 0;
@@ -10,14 +11,16 @@
     margin: auto;
 }
 
-.confirm-btn{
+
+
+.confirmBtn{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
     margin: 80px 0 0 0;
 }
 
-.confirm-btn button{
+.confirmBtn button{
     width: 100px;
     height: 80px;
     font-size: 26px;
@@ -30,11 +33,11 @@
     box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
-.confirm-btn .ok:hover{
+.confirmBtn .ok:hover{
     background-color: red;
 }
 
-.confirm-btn .cancel:hover{
+.confirmBtn .cancel:hover{
     background-color: #ffffff;
     color: black;
 }

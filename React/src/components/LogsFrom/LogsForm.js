@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Card from "../UI/Card/Card";
-import "./LogsForm.css"
-import useFetchData from "../../hooks/useFetchData";
+import classes from "./LogsForm.module.css"
 const LogsForm = (props) => {
-    const {addData}= useFetchData()
     // 定义一个State 存储数据
     const [formData,setFormData] = useState({
         inputDate:"",
@@ -54,7 +52,7 @@ const LogsForm = (props) => {
             logtype:formData.selectType
         }
 
-        addData("http://127.0.0.1:2000/add",newLog)
+        props.onAdd("http://127.0.0.1:2000/add",newLog)
 
     //     清空表单
             setFormData({
@@ -69,28 +67,28 @@ const LogsForm = (props) => {
     let optionList = props.optionClass.map((item,index) => <option key={index}>{item}</option>)
 
     return (
-        <Card className={'logs-form'}>
+        <Card className={classes.logsForm}>
             <form onSubmit={formSubmitHandler}>
-                <div className={"form-item"}>
+                <div className={classes.formItem}>
                     <label htmlFor="date">日期</label>
                     <input id={"date"} onChange={dateChangeHandler} value={formData.inputDate} type="date" />
                 </div>
-                <div className={"form-item"}>
+                <div className={classes.formItem}>
                     <label htmlFor="desc">内容</label>
                     <input id={"desc"} onChange={descChangeHandler} value={formData.inputDesc} type="text"/>
                 </div>
-                <div className={"form-item"}>
+                <div className={classes.formItem}>
                     <label htmlFor="time">时长</label>
                     <input id={"time"} onChange={countChangeHandler} value={formData.inputCount} type="text"/>
                 </div>
-                <div className="form-item">
+                <div className={classes.formItem}>
                     <label htmlFor="sort">分类</label>
                     <select id="sort" onChange={sortChangeHandler} value={formData.selectType}>
                         {optionList}
                     </select>
 
                 </div>
-                <div className="form-btn">
+                <div className={classes.formBtn}>
                     <button>添加</button>
                 </div>
             </form>

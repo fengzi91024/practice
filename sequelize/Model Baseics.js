@@ -32,7 +32,7 @@ const Log = sequelize.define('Log', { // 模型名称首字母大写
 });
 
 (async () => {
-    await Log.sync({force:true}); // 或 Log.sync({ force: true }) 重置表结构
+    await Log.sync({}); // 或 Log.sync({ force: true }) 重置表结构
     console.log("Log 模型表刚刚(重新)创建！");
 })();
 

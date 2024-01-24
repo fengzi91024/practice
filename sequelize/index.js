@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const Log = require("./Model Baseics")
@@ -22,31 +23,34 @@ app.use((req, res, next) => {
 
 app.post("/add", (req, res) => {
 
-    const {date,desc,count,logtype} = req.body
+    const { date, desc, count, logtype } = req.body
     console.log(req.body);
 
     const addLogEntry = async () => {
         try {
             const newLog = await Log.create({
-                logtype:logtype,
+                logtype: logtype,
                 date: date,
                 desc: desc,
                 count: count,
-                
             });
-
             console.log('New log entry created:', newLog);
+            return newLog
         } catch (error) {
             console.error('Error while creating a new log entry:', error);
         }
+
+
     };
 
-    addLogEntry();
-
-    res.send({
-        status:"200",
-        data:"添加成功"
+    addLogEntry().then(newLog => {
+        res.send({
+            status: "200",
+            data: newLog
+        })
     })
+
+
 
 })
 
@@ -57,24 +61,45 @@ app.get("/list", (req, res) => {
     ; (async () => {
         try {
             const logs = await Log.findAll({
-                attributes:{exclude:['createdAt','updatedAt']}
+                attributes: { exclude: ['createdAt', 'updatedAt'] }
             })
-            
+
             res.json({
                 status: "200",
-                data:logs                
+                data: logs
             })
         }
         catch (error) {
             console.log(error);
         }
     })();
-    
-    
-    
-
 })
 
+app.delete("/:id", (req, res) => {
+    const id = req.params.id
+    async function deleteData(id) {
+        try {
+            await Log.destroy({
+                where: {
+                    id: id
+                }
+            });
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    deleteData(id).then(() => {
+        res.json({
+            status: "200",
+            data: id
+        })
+    })
+
+
+
+})
 
 
 

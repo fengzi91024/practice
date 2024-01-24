@@ -1,11 +1,11 @@
-.logs-date{
+.logsDate{
     width: 88px;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
 }
 
-.logs-date .month{
+.logsDate .month{
     height: 28px;
     line-height: 28px;
     background-color: #d62828;
@@ -13,7 +13,7 @@
     color: white;
 }
 
-.logs-date .day{
+.logsDate .day{
     background-color: #fff;
     height: 60px;
     line-height: 60px;
