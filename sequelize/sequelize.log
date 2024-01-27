@@ -63,3 +63,6 @@
 2024-01-27T07:24:12.792Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
 2024-01-27T07:25:54.749Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
 2024-01-27T10:18:45.522Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T13:03:59.039Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T13:03:59.049Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T13:03:59.062Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
