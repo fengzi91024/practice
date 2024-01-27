@@ -1,7 +1,6 @@
 const {Sequelize, DataTypes, fn} = require('sequelize');
 const fs = require("fs")
 const path = require("path");
-const { log } = require('console');
 const logStream = fs.createWriteStream(path.join(__dirname,'sequelize.log'),{flags:'a'});
 
 //创建数据库连接

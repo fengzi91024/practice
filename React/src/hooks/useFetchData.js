@@ -24,7 +24,8 @@ function useFetchData(url) {
             // 加载结束
             setLoading(false);
         }
-    }, [url]) // logsData 作为依赖项
+    }, [url])
+
     useEffect(()=>{
         fetchData();
     },[fetchData])

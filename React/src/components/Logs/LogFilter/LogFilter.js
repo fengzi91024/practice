@@ -4,7 +4,6 @@ import "./LogFilter.css"
 
 const LogFilter = (props) => {
 
-
     const changeHandler = e => {
         props.onSelectChange(e.target.value);
     }

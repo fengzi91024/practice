@@ -9,8 +9,7 @@ import useFetchData from "./hooks/useFetchData";
 const App = () => {
     const {logsData, removeData, addData} = useFetchData("http://127.0.0.1:2000/list")
 
-    const optionClass = ["学习", "运动","阅读"];
-    console.log(logsData)
+    const optionClass = ["编程", "运动","阅读"];
     return (
         <div className={classes.app}>
             <LogsForm optionClass={optionClass} onAdd={addData}></LogsForm>

@@ -1,0 +1,65 @@
+2024-01-26T11:08:56.715Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-26T11:08:56.721Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-26T11:08:56.728Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-26T11:09:36.785Z - Executing (default): DELETE FROM `Logs` WHERE `id` = '7',[object Object]
+2024-01-26T11:09:36.797Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-26T11:11:16.840Z - Executing (default): SELECT 1+1 AS result
+2024-01-26T11:11:16.843Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test'
+2024-01-26T11:11:16.847Z - Executing (default): SHOW INDEX FROM `Logs`
+2024-01-26T11:11:32.968Z - Executing (default): INSERT INTO `Logs` (`id`,`logtype`,`date`,`desc`,`count`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+2024-01-26T11:11:32.975Z - New log entry created:日志类型 编程 , 日期：2024-01-25T00:00:00.000Z ,内容: React , 时长: 120
+2024-01-26T11:11:32.985Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;
+2024-01-26T11:12:02.278Z - Executing (default): DELETE FROM `Logs` WHERE `id` = '8'
+2024-01-26T11:12:02.286Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;
+2024-01-26T11:13:35.487Z - Executing (default): SELECT 1+1 AS result
+2024-01-26T11:13:35.491Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test'
+2024-01-26T11:13:35.496Z - Executing (default): SHOW INDEX FROM `Logs`
+2024-01-26T11:14:02.679Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-26T11:14:02.684Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-26T11:14:02.689Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-26T11:15:39.189Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-26T11:15:39.195Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-26T11:15:39.201Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-26T11:17:04.154Z - Executing (default): INSERT INTO `Logs` (`id`,`logtype`,`date`,`desc`,`count`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);,[object Object]
+2024-01-26T11:17:04.162Z - New log entry created:日志类型 编程 , 日期：2024-01-26T00:00:00.000Z ,内容: 学习react , 时长: 22
+2024-01-26T11:17:04.173Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-26T11:25:47.024Z - Executing (default): SELECT 1+1 AS result
+2024-01-26T11:25:47.028Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test'
+2024-01-26T11:25:47.032Z - Executing (default): SHOW INDEX FROM `Logs`
+2024-01-26T11:26:17.951Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-26T11:26:17.956Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-26T11:26:17.963Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:19:55.400Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T07:19:55.407Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T07:19:55.414Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:20:11.152Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T07:20:11.159Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T07:20:11.170Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:21:49.512Z - Executing (default): INSERT INTO `Logs` (`id`,`logtype`,`date`,`desc`,`count`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);,[object Object]
+2024-01-27T07:21:49.519Z - New log entry created:日志类型 编程 , 日期：2024-01-27T00:00:00.000Z ,内容: TypeScript , 时长: 120
+2024-01-27T07:21:49.534Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:21:52.077Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:21:52.087Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:21:55.729Z - Executing (default): DELETE FROM `Logs` WHERE `id` = '10',[object Object]
+2024-01-27T07:21:55.739Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:22:54.329Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T07:22:54.337Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T07:22:54.345Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:22:58.692Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T07:22:58.699Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T07:22:58.707Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:23:02.897Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T07:23:02.905Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T07:23:02.914Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:23:10.030Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:23:10.045Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:23:14.944Z - Executing (default): INSERT INTO `Logs` (`id`,`logtype`,`date`,`desc`,`count`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);,[object Object]
+2024-01-27T07:23:14.950Z - New log entry created:[object Object]
+2024-01-27T07:23:14.960Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:23:18.698Z - Executing (default): DELETE FROM `Logs` WHERE `id` = '11',[object Object]
+2024-01-27T07:23:18.709Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T07:24:12.773Z - Executing (default): SELECT 1+1 AS result,[object Object]
+2024-01-27T07:24:12.783Z - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Logs' AND TABLE_SCHEMA = 'test',[object Object]
+2024-01-27T07:24:12.792Z - Executing (default): SHOW INDEX FROM `Logs`,[object Object]
+2024-01-27T07:25:54.749Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]
+2024-01-27T10:18:45.522Z - Executing (default): SELECT `id`, `logtype`, `date`, `desc`, `count` FROM `Logs` AS `Log`;,[object Object]

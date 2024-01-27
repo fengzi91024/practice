@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('./db.config');
+const {sequelize} = require('./db.config');
 
 const Log = sequelize.define('Log', { // 模型名称首字母大写
     id: {
@@ -32,8 +32,7 @@ const Log = sequelize.define('Log', { // 模型名称首字母大写
 });
 
 (async () => {
-    await Log.sync({}); // 或 Log.sync({ force: true }) 重置表结构
-    console.log("Log 模型表刚刚(重新)创建！");
+    await Log.sync(); // 或 Log.sync({ force: true }) 重置表结构
 })();
 
 

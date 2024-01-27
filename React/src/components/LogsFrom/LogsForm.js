@@ -7,7 +7,7 @@ const LogsForm = (props) => {
         inputDate:"",
         inputDesc:"",
         inputCount:"",
-        selectType:"学习"
+        selectType:"编程"
     })
 
     //获取日期的值
@@ -34,6 +34,7 @@ const LogsForm = (props) => {
 
     // 获取分类
     const sortChangeHandler = (e)=>{
+        console.log(e.target.value)
         setFormData({
             ...formData,
             selectType: e.target.value
@@ -59,7 +60,7 @@ const LogsForm = (props) => {
                 inputDate: "",
                 inputDesc: "",
                 inputCount: "",
-                selectType: "学习"
+                selectType: "编程"
             })
         
     }

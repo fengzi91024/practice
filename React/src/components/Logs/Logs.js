@@ -7,11 +7,10 @@ import LogFilter from "./LogFilter/LogFilter";
 const Logs = (props) => {
     const [year, setYear] = useState(2024)
     const [month, setMonth] = useState(1)
-    const [sort, setSort] = useState("学习")
+    const [sort, setSort] = useState("编程")
     // 创建option列表
     const optionYear = [2024, 2025]
     const optionMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
     //过滤数据
     let filterData = props.logsData.filter(item => {
         // 修改时间格式

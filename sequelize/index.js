@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const Log = require("./Model Baseics")
-
+const {logging} = require("./db.config")
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -34,7 +34,7 @@ app.post("/add", (req, res) => {
                 desc: desc,
                 count: count,
             });
-            console.log('New log entry created:', newLog);
+            logging(`New log entry created:日志类型 ${logtype} , 日期：${date} ,内容: ${desc} , 时长: ${count}`)
             return newLog
         } catch (error) {
             console.error('Error while creating a new log entry:', error);
@@ -75,6 +75,8 @@ app.get("/list", (req, res) => {
     })();
 })
 
+
+// 删除log中的删除logging 会直接返回日志记录无需使用logging函数来记录数据库的更新数据
 app.delete("/:id", (req, res) => {
     const id = req.params.id
     async function deleteData(id) {
@@ -84,7 +86,6 @@ app.delete("/:id", (req, res) => {
                     id: id
                 }
             });
-            return result;
         } catch (error) {
             console.log(error);
         }

@@ -22,7 +22,6 @@ const LogItem = (props) => {
         props.onDel();
         setShowConfirm(false)
     }
-
     return (
             <Card className={classes.logsItem}>
                 {showConfirm && <Confirm content={"该操作不可恢复！请确认"} onOK={okHandler} onCancel={cancelHandler}></Confirm>}
