@@ -7,13 +7,23 @@ import useFetchData from "./hooks/useFetchData";
 
 
 const App = () => {
-    const {logsData, removeData, addData} = useFetchData("http://127.0.0.1:2000/list")
-
+    const {logsData, removeData, addData,loading,error} = useFetchData("http://127.0.0.1:2000/list")
     const optionClass = ["编程", "运动","阅读"];
     return (
         <div className={classes.app}>
-            <LogsForm optionClass={optionClass} onAdd={addData}></LogsForm>
-            <Logs optionClass={optionClass} removeData={removeData} logsData={logsData}/>
+            {
+                (!loading && !error) &&
+                <>
+                    <LogsForm optionClass={optionClass} onAdd={addData}></LogsForm>
+                    <Logs optionClass={optionClass} removeData={removeData} logsData={logsData}/>
+                </>
+            }
+            {
+                loading && <p>数据加载中</p>
+            }
+            {
+                error && <p>数据加载异常！</p>
+            }
         </div>
     );
 };

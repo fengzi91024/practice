@@ -13,10 +13,19 @@ function useFetchData(url) {
     const fetchData = useCallback(async () => {
         // 开始加载
         setLoading(true);
+        // 重置错误
+        setError(null)
         try {
             const response = await axios.get(url)
-            const data = response.data.data
-            setLogsData(prevLogsData => prevLogsData = data);
+            console.log(response)
+            if(response.statusText === 'OK' ){
+                const data = response.data.data
+                setLogsData(prevLogsData => prevLogsData = data);
+                return
+            }
+
+            throw new Error("请求数据失败")
+
         } catch (err) {
             // 接收错误信息
             setError(err);
