@@ -3,23 +3,29 @@ import classes from "./LogItem.module.css"
 import MyDate from "./MyDate/MyDate";
 import Card from "../../UI/Card/Card";
 import Confirm from "../../UI/ConFirm/Confirm";
+import useFetch from "../../../hooks/useFetch";
+import LogsContext from "../../../store/LogsContext";
 
-const LogItem = (props) => {
+const LogItem = ({date,desc,count,id}) => {
     const [showConfirm,setShowConfirm] = useState(false)
-    const {date,desc,count,logtype} = props
 
     const deleteHandler = () => {
 
         setShowConfirm(true)
 
     }
-    // 定义一个取消的函数
+    // 定义取消的函数
     const cancelHandler=() =>{
         setShowConfirm(false)
     }
-    // 定义一个确定的函数
+    const ctx = useContext(LogsContext)
+    const {fetchData:removeData} = useFetch({
+        url:`http://127.0.0.1:2000/${id}`,
+        method:"DELETE"
+    },ctx.fetchData)
+    // 定义确定的函数
     const okHandler=()=>{
-        props.onDel();
+        removeData();
         setShowConfirm(false)
     }
     return (
@@ -32,9 +38,6 @@ const LogItem = (props) => {
                 </div>
                 <div className={classes.logsDel}>
                     <div className={classes.delete} onClick={deleteHandler}>x</div>
-                </div>
-                <div className={classes.logsSort}>
-                    <span>{logtype}</span>
                 </div>
             </Card>
     );

@@ -1,8 +1,10 @@
-import React, { useState} from 'react';
+import React, {useContext, useState} from 'react';
 import LogItem from "./LogItem/LogItem";
 import classes from "./Logs.module.css"
 import Card from "../UI/Card/Card";
 import LogFilter from "./LogFilter/LogFilter";
+import useFetch from "../../hooks/useFetch";
+import LogsContext from "../../store/LogsContext";
 
 const Logs = (props) => {
     const [year, setYear] = useState(2024)
@@ -38,10 +40,10 @@ const Logs = (props) => {
                         count={item.count}
                         key={item.id}
                         logtype={item.logtype}
-                        onDel={()=>{props.removeData("http://127.0.0.1:2000/"+item.id)}}
+                        id={item.id}
         />
     })
-
+    const ctx = useContext(LogsContext)
 
     return (<Card className={classes.logs}>
         <div className={classes.filterTime}>
@@ -51,7 +53,7 @@ const Logs = (props) => {
                 <LogFilter labelContent={'月份'} option={optionMonth}
                            onSelectChange={changeMonthHandler}></LogFilter>
             </div>
-            <LogFilter option={props.optionClass} labelContent={'分类'}
+            <LogFilter option={ctx.optionClass} labelContent={'分类'}
                        onSelectChange={changeClassHandler}></LogFilter>
         </div>
         {LogList.length != 0 ? LogList : <p>日志列表为空!</p>}

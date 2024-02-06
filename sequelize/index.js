@@ -22,20 +22,20 @@ app.use((req, res, next) => {
 
 
 app.post("/add", (req, res) => {
-
+    
     const { date, desc, count, logtype } = req.body
     console.log(req.body);
 
     const addLogEntry = async () => {
         try {
-            const newLog = await Log.create({
+            await Log.create({
                 logtype: logtype,
                 date: date,
                 desc: desc,
                 count: count,
             });
+
             logging(`New log entry created:日志类型 ${logtype} , 日期：${date} ,内容: ${desc} , 时长: ${count}`)
-            return newLog
         } catch (error) {
             console.error('Error while creating a new log entry:', error);
         }
@@ -43,10 +43,10 @@ app.post("/add", (req, res) => {
 
     };
 
-    addLogEntry().then(newLog => {
+    addLogEntry().then(() => {
         res.send({
             status: "200",
-            data: newLog
+            data: "添加成功"
         })
     })
 
@@ -94,7 +94,7 @@ app.delete("/:id", (req, res) => {
     deleteData(id).then(() => {
         res.json({
             status: "200",
-            data: id
+            data: "删除成功"
         })
     })
 

@@ -1,6 +1,8 @@
 import React, {useContext, useState} from 'react';
 import Card from "../UI/Card/Card";
 import classes from "./LogsForm.module.css"
+import useFetch from "../../hooks/useFetch";
+import LogsContext from "../../store/LogsContext";
 const LogsForm = (props) => {
     // 定义一个State 存储数据
     const [formData,setFormData] = useState({
@@ -40,7 +42,11 @@ const LogsForm = (props) => {
             selectType: e.target.value
         })
     }
-
+    const ctx =useContext(LogsContext)
+    const{fetchData:onAdd} =useFetch({
+        url:"http://127.0.0.1:2000/add",
+        method:"POST"
+    },ctx.fetchData)
     const  formSubmitHandler = async(e)=>{
         //     取消表单的默认行为
         e.preventDefault();
@@ -53,7 +59,7 @@ const LogsForm = (props) => {
             logtype:formData.selectType
         }
 
-        props.onAdd("http://127.0.0.1:2000/add",newLog)
+        onAdd(newLog)
 
     //     清空表单
             setFormData({
@@ -65,7 +71,7 @@ const LogsForm = (props) => {
         
     }
 
-    let optionList = props.optionClass.map((item,index) => <option key={index}>{item}</option>)
+    let optionList = ctx.optionClass.map((item,index) => <option key={index}>{item}</option>)
 
     return (
         <Card className={classes.logsForm}>
@@ -97,4 +103,4 @@ const LogsForm = (props) => {
     );
 };
 
-export default LogsForm;
+export default React.memo(LogsForm);
