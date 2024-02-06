@@ -38,26 +38,47 @@ function useFetchData(url) {
     useEffect(()=>{
         fetchData();
     },[fetchData])
+
     // 添加数据
     const addData = useCallback(async (url, data) => {
+        // 开始加载
+        setLoading(true);
+        // 重置错误
+        setError(null)
         try {
             const response = await axios.post(url, data)
-            const resData = response.data.data
-            setLogsData(prevState => [...prevState, resData]);
-                // 在这里调用 fetchData 可以确保数据更新后重新加载
-                fetchData();
+            if (response.statusText !== "OK"){
+                throw new Error ("添加失败")
+                return
+            }
+            fetchData();
+
         } catch (error) {
-            console.error("Error adding data:", error);
+            setError(error)
+        }finally {
+            setLoading(false)
         }
     }, []);
 
     // 删除日志
     const removeData = useCallback(async (url) => {
-        const response = await axios.delete(url)
-        const id = response.data.data.id
-        setLogsData(prevState => prevState.filter(item => item.id !== id));
-        // 可以在这里调用 fetchData 以确保数据更新后重新加载
-        fetchData();
+        // 开始加载
+        setLoading(true);
+        // 重置错误
+        setError(null)
+      try{
+          const response = await axios.delete(url)
+          if(response.statusText === "OK"){
+              // 可以在这里调用 fetchData 以确保数据更新后重新加载
+              fetchData();
+              return
+          }
+          throw new Error("删除错误")
+      }catch (error){
+          setError(error)
+      }finally{
+            setLoading(false)
+      }
     }, []);
 
     return { logsData, setLogsData, error, loading, addData, removeData, fetchData };
