@@ -8,7 +8,7 @@ const { log } = require("node:console");
 const fs = require("node:fs")
 const path = require("node:path")
 //导入sequelize 模块
-const { Sequelize } = require("sequelize");4
+const { Sequelize } = require("sequelize");
 
 // 文件系统创建文件
 const logStream = fs.createWriteStream(path.join(__dirname,'sequelize.log'),{flags:'a'});

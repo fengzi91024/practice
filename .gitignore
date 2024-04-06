@@ -8,3 +8,6 @@ Java/jigsawPuzzleGame/
 React/node_modules/
 sequelize/node_modules/
 .gitignore
+study/node_modules
+React-sys/student-admin-react/.next
+React-sys/student-admin-react/node_modules
